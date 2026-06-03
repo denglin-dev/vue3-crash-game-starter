@@ -1,14 +1,12 @@
-# Cy Games Demo
+# Vue3 Crash Game Starter
 
-Nuxt 3 + Vue 3 demo showcasing three original crypto casino games:
+Production-style **Crash** game frontend starter (Vue 3 + Nuxt 3 + TypeScript + Pixi.js), with **Mines** and **Plinko** demos in the same repo.
 
-- **Mines** — grid-based minesweeper
-- **Plinko** — Pixi.js ball physics
-- **Crash** — multiplier curve game
+> **Frontend-only demo** — no backend required. APIs and Crash WebSocket are replaced with local mocks.
 
-> This is a **frontend-only demo** for GitHub. All API / WebSocket calls are replaced with local mock hooks. No backend, wallet, or auth required.
+## Live Demo
 
-## Quick Start
+Run locally:
 
 ```bash
 npm install
@@ -17,45 +15,66 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
-## Routes
+## Preview
+
+(Add screenshots or GIF here)
+
+## Features
+
+- Real-time multiplier crash curve (Pixi canvas)
+- Betting panel UI (Manual / Auto)
+- Auto cashout
+- Mines & Plinko mini-games (demo)
+- Responsive layout (1296px centered desktop shell)
+- i18n-ready
+- Easy to swap mocks for real API / WS
+
+## Games & Routes
 
 | Game   | URL            |
 |--------|----------------|
 | Home   | `/`            |
+| Crash  | `/game/crash`  |
 | Mines  | `/game/mines`  |
 | Plinko | `/game/plinko` |
-| Crash  | `/game/crash`  |
 
-## Mock Layer
-
-| Production              | Demo replacement                          |
-|-------------------------|-------------------------------------------|
-| `minesApi` / `plinkoApi`| `utils/ts/game/*Api.ts` — local logic     |
-| Crash WebSocket         | `crash/ws/crashWsController.ts` — simulator |
-| `utils/hook/hook.ts`    | Demo wallet stub (balance: 10000 USDT)    |
-| `stores/gameConfig`     | Hardcoded table config                    |
-
-## Tech Stack
+## Built With
 
 - Nuxt 3
 - Vue 3 + TypeScript
 - Pinia
-- Pixi.js 8 (Plinko & Crash canvas)
+- Pixi.js 8
 - Sass
+
+## Mock Layer (Demo)
+
+| Production               | Demo replacement                             |
+|--------------------------|----------------------------------------------|
+| `minesApi` / `plinkoApi` | `utils/ts/game/*Api.ts`                      |
+| Crash WebSocket          | `pages/newGame/crash/ws/crashWsController.ts` |
+| Wallet / auth            | `utils/hook/hook.ts` (stub balance)          |
+| Game config              | `stores/gameConfig.ts`                       |
 
 ## Project Structure
 
 ```
-pages/newGame/     # Game source (copied from production)
-i18n/lang/         # Locale JSON (from cy_client_nuxt3)
-components/        # Shared GameTemplate, BetInput, TabBar…
-utils/hook/        # Demo auth/wallet stub
-stores/            # Mock gameConfig
-public/            # Game assets (images, sounds)
+pages/newGame/     # Crash, Mines, Plinko
+components/        # BetInput, TabBar, GameHistory…
+i18n/lang/         # Locales
+public/            # Images & sounds
 ```
 
-Layout is capped at **1296px** (`--center-width`), centered on wide screens.
+## Perfect For
+
+- Crash game MVP / prototype
+- Casino frontend demos
+- Learning crash curve & bet flow
+- GitHub portfolio showcase
+
+## Contact
+
+Email: d18200517389@163.com
 
 ## License
 
-Demo code for portfolio / GitHub showcase. Game UI logic © original project.
+Demo code for portfolio / showcase. Game UI logic © original project.
