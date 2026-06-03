@@ -1,7 +1,8 @@
 <template>
 	<div id="CyGameBoxContainer" ref="TreasureChestBox">
 		<div class="top-box">
-			<GameHistoryDobule @colorTable="handleColorTable" :game-code="GAME_CODE.CRASH" is-crash-game :list="crashHistory.list">
+			<GameHistoryDobule @colorTable="handleColorTable" :game-code="GAME_CODE.CRASH" is-crash-game
+				:list="crashHistory.list">
 			</GameHistoryDobule>
 		</div>
 		<GameCanvas :key="crashGameKey" :canvas-height="canvasHeight" />
@@ -23,7 +24,7 @@ const GameHistoryDobule = defineAsyncComponent(() => import("~/components/GameCo
 const isShowColorTable = ref(true)
 const handleColorTable = (value) => {
 	isShowColorTable.value = value
-}	
+}
 const canvasHeight = computed(() => {
 	if (deviceAdvanced.value === "mobile") {
 		return "229px"
