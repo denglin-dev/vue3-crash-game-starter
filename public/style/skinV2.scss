@@ -1,0 +1,29 @@
+//2.0
+:root {
+  --09122BBodyBg: #09122B;
+  --balanceBg: #202B50;
+  --balanceBorderBg: #1C2A46;
+  --111933HeaderBg: #111933;
+  --asideHoverBg: #20CE2E33;
+  --center-width: 1296px;
+  --center-padding: 34px;
+  --mobile-tab-text-color: #20CE2E;
+  --mobile-tab-text-color-t: #20CE2E1A;
+  --notification-subscript-color: #FF0000;
+  --rightPcWidth: 329px;
+  --mobileWidth: 768px;
+  --tabletWidth: 1200px;
+  --leftCloseWidth: 74px;
+  --leftPcWidth: 295px;
+  --rightCloseWidth: 0;
+  --headerMobileHeight: 44px;
+  --headerPcHeight: 82px;
+  --footerPcHeight: 306px;
+}
+
+/* 媒体查询 */
+@media (max-width: 786px) {
+  :root {
+    --headerPcHeight: 52px; /* 当屏幕宽度小于786px时重新定义 */
+  }
+}

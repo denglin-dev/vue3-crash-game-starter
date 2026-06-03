@@ -1,0 +1,124 @@
+:root {
+  --new-header-height: 82px;
+  --new-body-bg-color: #09122B;
+  --new-footer-height: 386px;;
+  --new-main-padding-lr: 8px;
+  //--new-main-left-aside-width: 13.48%;
+  --new-main-left-aside-width: 259px;
+  --new-main-close-left-aside-width: 67px;
+  //--new-main-content-width: 69.86%;
+  --new-main-content-width: 1341px;
+  //--new-main-right-aside-width: 16.66%;
+  --new-main-right-aside-width: 320px;
+  --new-main-close-right-aside-width: 0px;
+  --hover-cursor-pointer: pointer;
+  //  sider_btn => style
+  --swiper-game-thumbnail-gap: 10px;
+  --swiper-game-thumbnail-per-column: 6;
+  --mobile-header-height: 44px;
+  --mobile-tabbar-height: 86px;
+  /* Menu/Chat 内容避让底栏的视觉高度；66px 贴近底栏实际内容区，避免输入框过低或空带过大 */
+  --mobile-tabbar-inset: calc(66px + env(safe-area-inset-bottom, 0px));
+  /* H5 主导航层级：默认弹窗 > 底栏；Menu/Chat/个人中心/Wallet/Notifications 低于底栏，允许切 Tab */
+  --mobile-menu-chat-z-index: 49;
+  --mobile-profile-z-index: 49;
+  --mobile-wallet-z-index: 49;
+  --mobile-notifications-z-index: 49;
+  --mobile-tabbar-z-index: 50;
+  //  Cy_swiper
+  --roo-game-thumbnail-gap: 10px;
+  //--roo-game-thumbnail-per-column: 6;
+  --roo-game-thumbnail-per-column: 7;
+  // Vip Bonuses
+  --vip-bonus-bg-gap: 10px;
+  --vip-bonus-text-column: 4;
+  //厂商
+  --providers-bound-cloumn: 6;
+  //levelAndRank
+  --vip-bonus-levelAndRank-gap: 10px;
+  --vip-bonus-levelAndRank_column: 4;
+  //  searchGame
+  //--search-game-column: 6;
+  --search-game-column: 8;
+  --search-game-gap: 10px;
+}
+
+@media (max-width: 3396px) {
+  :root {
+    --roo-game-thumbnail-per-column: 6; /* 保持7列 */
+    --vip-bonus-text-column: 4;
+    --vip-bonus-levelAndRank_column: 2;
+    --providers-bound-cloumn: 6;
+     //--search-game-column: 6;
+    --search-game-column: 8;
+
+  }
+}
+
+//组件cy_swiper的样式
+@media (max-width: 1920px) {
+  :root {
+    --roo-game-thumbnail-per-column: 6; /* 保持7列 */
+    --vip-bonus-text-column: 4;
+    --vip-bonus-levelAndRank_column: 2;
+    --providers-bound-cloumn: 6;
+     //--search-game-column: 6;
+    --search-game-column: 8;
+
+
+  }
+}
+
+@media (max-width: 1600px) {
+  :root {
+    --roo-game-thumbnail-per-column: 6; /* 小于1600px，显示6列 */
+    --vip-bonus-text-column: 4;
+    --vip-bonus-levelAndRank_column: 2;
+    --providers-bound-cloumn: 6;
+    --search-game-column: 7;
+
+  }
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --roo-game-thumbnail-per-column: 6; /* 小于1200px，显示5列 */
+    --vip-bonus-text-column: 3;
+    --vip-bonus-levelAndRank_column: 2;
+    --providers-bound-cloumn: 5;
+    --search-game-column: 6;
+
+
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --roo-game-thumbnail-per-column: 5; /* 小于800px，显示4列 */
+    --vip-bonus-text-column: 2;
+    --vip-bonus-levelAndRank_column: 1;
+    --providers-bound-cloumn: 4;
+    --search-game-column: 4;
+
+
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --roo-game-thumbnail-per-column: 3; /* 小于600px，显示3列 */
+    --vip-bonus-text-column: 1;
+    --vip-bonus-levelAndRank_column: 1;
+    --providers-bound-cloumn: 4;
+    --search-game-column: 3;
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --roo-game-thumbnail-per-column: 3; /* 继续保持3列，适用于375px */
+    --vip-bonus-text-column: 1;
+    --vip-bonus-levelAndRank_column: 1;
+    --providers-bound-cloumn: 3;
+  }
+}

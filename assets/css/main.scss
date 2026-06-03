@@ -1,0 +1,34 @@
+@use '~/pages/newGame/common/styles/game-common.scss';
+
+:root {
+  --111933HeaderBg: #111933;
+  --center-width: 1296px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #0b1220;
+  color: #fff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.scrollbarNone {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

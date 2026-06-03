@@ -1,0 +1,61 @@
+:root {
+  --new-body-bg-color: #09122B;
+  --new-footer-bg-color: #111933;;
+  //--new-main-left-aside-width: 13.48%;
+  --new-aside-border-color: #1C2A46;
+  --hover-cursor-pointer: pointer;
+  --active-high-color: #A6FF53;
+  --active-transparent-color: #A6FF531A;
+  --admin-message-bg: #B5FF6129;
+  --new-message-input-background: #09122B;
+  --new-aside-bg-color: #111933;
+  --new-message-boxshadow-color: #111933FF;
+  --new-white: #FFFFFFFF;
+  --black-tranparent06-color: #00000099;
+  --primary-text-color: #6B7289FF;
+  --notification-remark-color: #97B9E1;
+  --notification-time-color: #456C99;
+  --page-load-more: #2C476C;
+  --white-transparent02-color: #FFFFFF33;
+
+  //--main-left-width: 259px;
+  //--main-right-width: 320px;
+  //--main-content-width: 1341px;
+  --el-text-color-primary: #192342;
+
+  //  sider_btn => style
+  --sider-menu-bg-color: rgba(9, 18, 43, 1);
+  --sider-menu-bg-active-color: linear-gradient(180deg, #65E143 0%, #00C524 100%);
+  --sider-menu-bg-hover-color: rgba(28, 42, 70, 1);
+
+  //--tabbar-bg-color:#0D1028;
+  --mobile-bg-color: #0D1028;
+  --mobile-text-color: #1E324E;
+  --mobile-side-bg-color: #0A0C1D;
+  --mobile-side-mask-bg-color: #121426D9;
+  --mobile-side-active-bg-color: #456C9921;
+  --mobile-profile-popover-bg: #141C37;
+  --mobile-profile-badge-bg: #FF0000;
+  --radio-border-color: #456C99;
+  --radio-bg-color: #20CE2E33;
+  --search-game-active-bg: #20CE2E1A;
+  --search-game-active-text: #20CE2E;
+
+
+  --wallte-tab-bg: #202B50;
+  --drop-content-bg: #0A213C;
+  --drop-active-bg: #2B3557;
+  --tablet-mobile-width: 768px; // 定义你的变量
+}
+
+.el-input__inner {
+  color: #97B9E1;
+}
+
+.el-input__inner::placeholder {
+  color: #2c476c;
+}
+
+.el-input__inner:-webkit-autofill {
+  -webkit-text-fill-color: #97B9E1 !important;
+}

@@ -1,0 +1,44 @@
+@font-face {
+  //超大标题
+  font-family: 'FixelText-ExtraBold';
+  src: url('/public/fonts/Manrope-ExtraBold.woff2') format('woff2'),
+  url('/public/fonts/Manrope-ExtraBold.otf') format('opentype');
+  font-display: swap;
+}
+
+//标签文字
+@font-face {
+  font-family: 'FixelText-Bold';
+  src: url('/public/fonts/Manrope-Bold.woff2') format('woff2'),
+  url('/public/fonts/Manrope-Bold.otf') format('opentype');
+  font-display: swap;
+}
+// @font-face {
+//   font-family: 'FixelText-Medium';
+//   src: url('/public/fonts/Manrope-Bold.woff2') format('woff2'),
+//   url('/public/fonts/Manrope-Bold.otf') format('opentype');
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: 'FixelText-Regular';
+//   src: url('/public/fonts/Manrope-Bold.woff2') format('woff2'),
+//   url('/public/fonts/Manrope-Bold.otf') format('opentype');
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: 'FixelText-SemiBold';
+//   src: url('/public/fonts/Manrope-Bold.woff2') format('woff2'),
+//   url('/public/fonts/Manrope-Bold.otf') format('opentype');
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: 'Fixel Text';
+//   src: url('/public/fonts/Manrope-Bold.woff2') format('woff2'),
+//   url('/public/fonts/Manrope-Bold.otf') format('opentype');
+//   font-display: swap;
+// }
+
+// 这里定义全局字体样式
+body {
+  font-family: 'FixelText-Bold'; // 设置全局字体为 ExtraBold
+}

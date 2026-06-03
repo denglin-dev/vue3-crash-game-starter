@@ -1,0 +1,55 @@
+.inputCommonStyle {
+  &:hover {
+    border-color: #94a1ba;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid #94a1ba;
+  }
+}
+
+.quicklyBetBtn {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+
+  .betItem {
+    cursor: pointer;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    height: 32px;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #202b50;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    opacity: 1;
+    transition: opacity 0.15s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &.disable {
+    .betItem {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.inputCommonStyle.redBorder {
+  border-color: #ff4d4f !important;
+
+  &:hover {
+    border-color: #ff4d4f !important;
+  }
+}

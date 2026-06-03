@@ -1,0 +1,59 @@
+/**
+ * Responsible Gaming：el-select 下拉 Teleport 到 body，需全局样式。
+ * 对齐 pages/fairness/components/FairenessForm.vue（Provably Fair > Verification）里 DropDownMenu：
+ * - 面板：与 DropIndex 下拉内容区 #111933 一致；描边同 FairenessForm defineContentStyles #0A213C
+ * - 选项行：.drop-item — height 50px、字色 #456c99、左右 padding 20px；悬停/选中 #1c2a46 + 白字
+ */
+.responsible-verification-select-popper {
+	--el-bg-color-overlay: #111933;
+	background-color: #111933 !important;
+	border-radius: 10px;
+	border: 1px solid #0a213c;
+	box-sizing: border-box;
+
+	&.el-select__popper.el-popper {
+		.el-popper__content,
+		.el-select-dropdown,
+		.el-select-dropdown__list,
+		.el-scrollbar,
+		.el-scrollbar__wrap,
+		.el-scrollbar__view {
+			background-color: #111933 !important;
+		}
+
+		.el-select-dropdown__list {
+			padding: 0;
+
+			@media screen and (max-width: 768px) {
+				padding: 10px;
+			}
+		}
+
+		.el-select-dropdown__item {
+			height: 50px;
+			line-height: 50px;
+			padding: 0 20px;
+			margin: 0;
+			box-sizing: border-box;
+			font-size: 15px;
+			font-weight: 600;
+			color: #456c99;
+			background-color: transparent !important;
+
+			@media screen and (max-width: 768px) {
+				border-radius: 12px;
+			}
+
+			&.is-hovering,
+			&:hover {
+				color: #fff !important;
+				background-color: #1c2a46 !important;
+			}
+
+			&.is-selected {
+				color: #fff !important;
+				background-color: #1c2a46 !important;
+			}
+		}
+	}
+}

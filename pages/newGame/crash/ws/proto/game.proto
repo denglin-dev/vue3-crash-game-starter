@@ -1,0 +1,131 @@
+syntax = "proto3";
+package cybet;
+
+
+//历史消息
+message history_info {
+    string server_seed = 1;//服务器种子
+    string client_seed = 2;
+    string crash_point = 3;
+    int32 time = 4;
+    int32 idx = 5;
+    int32 max_idx = 6;
+    int32 start_time = 7;
+    string bet_id = 8;
+}
+
+
+
+// 请求下注
+message c2s_bet {
+    int32 auto_cashout_mult = 1;  //自动逃离倍数
+    int64 amount = 2;             // 下注金额   
+}
+// 下注返回
+message s2c_bet {
+    int32 code = 1;  //错误码
+    string message = 2;             // 
+    int64 amount = 3; //下注金额
+    int32 auto_cashout_mult = 4; //逃离倍数
+}
+
+//玩家结构体
+message player_info {
+    int32 player_id = 1; //
+    int64 amount = 2; //下注金额
+    string userName = 3; //昵称
+    string avatar = 4; //头像
+    string multiplier  = 5; //逃离倍数
+    int64 payout = 6;   //赔付
+    int64 profit = 7;   //收益
+    bool auto = 8;   //是否自动逃离
+    int32 status = 9;   //状态  1=pending / 2=cashed / 3=busted
+    int64 max_profit = 10;  // 最大赔付
+}
+
+//广播下注
+message s2c_broadcast_player_bet {
+    repeated player_info msg = 1;//批量推送（与下发字段名 msg 一致）
+}
+
+// 请求逃离
+message c2s_cashout {
+}
+// 逃离返回
+message s2c_cashout {
+    int32 code = 1;//错误码
+    string message = 2;//
+    string multiplier = 3;// 逃离倍数
+    int64 payout = 4;
+    int64 bet = 5;
+    int64 profit = 6;
+    bool auto = 7;//是否是自动逃离
+    int64 max_profit = 8;  // 最大赔付
+}
+
+//广播逃离
+message s2c_broadcast_player_cashout {
+    repeated player_info msg = 1;//批量推送
+}
+
+// 房间状态更新
+message s2c_room_state {
+    int32 phase = 1;// 1= flying   2=crashed  3=settling  4=betting
+    string multiplier = 2; //当前倍数
+    bool crashed = 3; // 是否爆炸
+    string crash_point = 4; //爆炸倍数
+    int32 betting_ticks_left = 5;//下注剩余时间
+    int32 this_idx = 6; //本轮下标
+    int32 this_max_idx = 7;//本轮最大局数
+    int32 remain_games = 8;//剩余局数
+    int32 this_start_time = 9;//本局开始时间
+    string server_seed = 10;//服务器种子
+    string client_seed = 11; //客户端种子
+    int32 online_count = 12;//在线人数
+    repeated player_info round_bets = 13; //下注列表
+    int32 tick_interval_ms = 14;    //这是啥
+    int32 game_id = 15;
+    int32 countdown_ms = 16;
+    int32 bet_count = 17;    //下注人数
+    int32 bet_amount = 18;   //下注金额
+    string this_bet_id = 19; //本局id
+}
+
+//飞行帧
+message s2c_flying_tick {
+    string multiplier = 1; //当前倍数
+    int32 elapsed_ms = 2; //时间
+}
+
+//进入房间
+message s2c_join {
+    repeated history_info history = 1;
+    s2c_room_state room_data = 2;
+    bool has_bet = 3;           //自己是否下注
+    int64 bet_amount = 4;       
+    int32 auto_cashout_mult = 5;
+}
+
+//更新在线人数
+message s2c_online_count {
+    int32 online_count =1;
+}
+ //     
+message s2c_kick{
+    int32 code = 1;
+}
+//更新 下注人数和下注金额
+message s2c_update_bet_info {
+    int32 bet_count = 1;    //下注人数
+    int64 bet_amount = 2;   //下注金额
+}
+// 全部下注列表
+message c2s_bet_list {
+     int32 page = 1;//
+}
+// 全部下注列表
+message s2c_bet_list {
+     repeated player_info msg = 1;//
+     int32 cur_page = 2;    //当前第几页
+     int32 max_page = 3;    //做大多少页
+}

@@ -1,0 +1,840 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  /*
+  无法被鼠标选中
+  */
+  //-webkit-user-select: none; /* Safari */
+  //-moz-user-select: none; /* Firefox */
+  //-ms-user-select: none; /* IE 10+ */
+  //user-select: none; /* 标准语法 */
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+html {
+  /* 减少纵向滚动条显隐时主内容区宽度变化带来的轻微横向/整体抖动感 */
+  scrollbar-gutter: stable;
+  /* iOS：避免系统按「可读性」自动放大文字导致版式像被缩放 */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  overscroll-behavior: auto !important;
+}
+
+.scroll-container {
+  overscroll-behavior: contain;
+}
+
+.no-select {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* 标准语法 */
+}
+
+.displayNone {
+  display: none !important;
+}
+
+.ml5 {
+  margin-left: 15px;
+}
+
+.mr3 {
+  margin-right: 3px;
+}
+
+.mt15 {
+  margin-top: 15px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt25 {
+  margin-top: 25px;
+}
+
+.mt32 {
+  margin-top: 32px;
+}
+
+.cw {
+  color: white;
+}
+
+.cti {
+  container-type: inline-size;
+}
+
+.fw500 {
+  font-weight: 500;
+}
+
+.fw700 {
+  font-weight: 700;
+}
+
+.fw600 {
+  font-weight: 600;
+}
+
+.fw400 {
+  font-weight: 400;
+}
+
+.fs12 {
+  font-size: 12px;
+}
+
+//.transitionForm05 {
+//  transition: all 100ms linear 0s;
+//}
+
+.transitionForm {
+  transition: width .35s cubic-bezier(.175, .685, .32, 1)
+}
+
+//取消dialog 滚动条
+.el-overlay-dialog::-webkit-scrollbar {
+  display: none !important;
+}
+
+.cybet-message-container {
+  transition: all 5s ease-in;
+  min-width: 379px;
+  width: auto;
+  //position: fixed;
+  //top: 0;
+  //width: 100%;
+  //z-index: 999;
+
+  div {
+    transition: all 5s ease-in;
+    //display: flex;
+    //justify-content: center;
+    //margin-top: 15px;
+  }
+}
+
+html {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  //.isclick_button:hover,.primary_button:hover,.success_button:hover,.white_button:hover,.isclick_button:hover,.info_button:hover{
+  //  animation: swing .4s 1 linear both;
+  //}
+  //灰色背景的按钮.isclick_button
+  //与背景色相同的按钮.primary_button
+  //绿色背景的按钮.success_button
+  //输入框样式.pri_input
+  //checkbox默认样式.pri_checkbox
+  //a标签删除下划线，颜色绿色
+  //边框灰色 背景色为透明色 .info_button
+  //边框蓝色 背景色为蓝色 info_button 的高亮btn .info_button.active
+  //白色的按钮 .white_button
+  //在表单里面用，输入框上面的灰色标题 .pri_p
+  //默认下拉样式，灰色，自己设置宽高 .pri_select
+  //默认时间组件，灰色调,在使用是加上popper-class="pri_data_picker_popper"
+  .isclick_button {
+    //灰色背景的按钮,宽度高度自己调整
+    background: var(--profile-btn-background) !important;
+    border-radius: 0.625rem;
+    border: 0.125rem solid var(--profile-btn-background);
+    color: var(--white-color) !important;
+  }
+
+  .primary_button {
+    //与背景色相同的按钮
+    background: var(--primary-button-background) !important;
+    border-radius: 0.625rem;
+    border: 0.125rem solid var(--primary-button-background);
+    color: var(--white-color) !important;
+    box-sizing: 0px 1px 4px 2px transparent !important;
+  }
+
+  .success_button {
+    //绿色背景的按钮,宽度高度自己调整
+    border-radius: 10px;
+    border: 0.125rem solid #20CE2E !important;
+    color: #ffffff !important;
+    background: #20CE2E !important;
+    cursor: pointer;
+  }
+
+  .white_button {
+    //白色的按钮,宽度高度自己调整
+    background: var(--white-color);
+    color: var(--black-color) !important;
+    border-radius: 0.625rem;
+    border: none;
+  }
+
+  .pri_input {
+    //输入框样式，高度自己调整
+    height: 3.375rem;
+    // margin-top: 20px;
+    @extend .Cy_font_Medium;
+
+
+    .el-input__wrapper {
+      background: var(--inputbox-background);
+      box-shadow: none;
+      border-radius: 0.625rem;
+
+      img {
+        margin-left: 0.4375rem;
+      }
+
+      .el-input__inner::placeholder {
+        font-size: 18px;
+        color: var(--primary-text-color);
+        font-weight: 500;
+
+        @media screen and (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+    }
+
+  }
+
+  .pri_checkbox {
+
+    //checkbox默认样式，目前为large的情况
+    .el-checkbox__inner {
+      background: #141622 !important;
+      border: none;
+      height: 1.0625rem !important;
+      width: 1.0625rem !important;
+      border-radius: 4px;
+    }
+
+    .el-checkbox__label {
+      color: var(--white-color) !important;
+      font-size: 0.8125rem !important;
+    }
+
+    .is-checked {
+      .el-checkbox__inner {
+        &:after {
+          height: 0.5625rem;
+          width: 0.5625rem;
+          background: var(--cyan-background);
+          border: none;
+          transform: none !important;
+          top: 0.25rem;
+          border-radius: 0.125rem;
+        }
+      }
+    }
+  }
+
+  .info_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .125rem solid #252839;
+    border-radius: .875rem;
+    background: transparent;
+    padding: 0.75rem 1.375rem 0.75rem 1.1875rem;
+    gap: .25rem;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    font-size: 1rem;
+    box-sizing: border-box
+  }
+
+  .info_button.active {
+    color: var(--white-color);
+    background: var(--active-button-background);
+    border: 0.125rem solid var(--primary-border-color);
+  }
+
+  a {
+    //a标签删除下划线，颜色绿色
+    color: var(--cyan-background);
+    text-decoration: none;
+  }
+
+  .themeBgColor {
+    background: var(--primary-header-background);
+  }
+
+  .themeBtnBgColor {
+    background: var(--primary-button-background);
+  }
+
+  .noScroll {
+    overflow: hidden; /* 禁用整个页面的滚动 */
+  }
+
+  /* 隐藏滚动条 */
+  .scrollbarNone {
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .scrollbarNone::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+
+  /* 修改滚动条样式 */
+  .scrollbarStyle {
+    overflow: inherit;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: rgba(40, 44, 61, 1) transparent; /* Firefox */
+
+    position: relative; /* 必须设置为relative */
+    overflow: hidden;
+  }
+
+  .scrollbarStyle::-webkit-scrollbar {
+    width: 0.3125rem;
+    height: 0.3125rem;
+    cursor: pointer;
+  }
+
+  /* 滚动条轨道 */
+  .scrollbarStyle::-webkit-scrollbar-track {
+    // background: #f1f1f1;
+  }
+
+  /* 滚动条滑块 */
+  .scrollbarStyle::-webkit-scrollbar-thumb {
+    background: rgba(40, 44, 61, 1);
+  }
+
+  /* 鼠标悬停在滑块上时的样式 */
+  .scrollbarStyle::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    border-radius: 0.3125rem;
+  }
+
+  //在表单里面用，输入框上面的灰色标题
+  .pri_p {
+    font-size: 0.8125rem;
+    color: var(--primary-text-color);
+    margin-bottom: 0.8125rem;
+    margin-top: 0.9375rem;
+  }
+
+  //默认下拉样式，灰色，自己设置宽高
+  .pri_select {
+    .el-select__wrapper {
+      background: var(--tabbox-listItem-background);
+      box-shadow: none;
+      border: none;
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      .el-select__selected-item {
+        color: var(--white-color);
+      }
+    }
+
+  }
+
+  //默认时间组件，灰色调,在使用是加上popper-class="pri_data_picker_popper"
+  .pri_data_picker_popper {
+    background: var(--inputbox-background) !important;
+    border: none !important;
+
+    .el-date-picker {
+      background: var(--inputbox-background);
+
+      .el-date-table {
+        th {
+          border-bottom: 1px solid #606266;
+        }
+
+        td.disabled .el-date-table-cell {
+          background-color: var(--primary-button-background);
+        }
+      }
+
+    }
+
+    .el-popper__arrow:before {
+      background: var(--inputbox-background) !important;
+      border: 1px solid #606266 !important;
+    }
+  }
+
+  //修改el-input输入框 focus样式
+  .el-input__wrapper.is-focus {
+    //box-shadow: 0 0 0 1px var(--primary-text-color) !important;
+  }
+}
+
+
+//全局button
+button, .info_button, .header-nav-list > div {
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */
+}
+
+
+
+.center-type div:hover {
+  border: none !important;
+  // transform: scale(1.06);
+  box-shadow: 0px 1px 4px 2px var(--hover-button-background) !important;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  //animation: swing .4s 1 linear both;
+}
+
+.center-type div:hover::before {
+  transform: scale(1);
+}
+
+
+.center-type div span,
+.center-type div img {
+  position: relative;
+  z-index: 10;
+}
+
+.center-type div:hover img {
+  position: relative;
+  z-index: 10;
+  filter: invert(0.1);
+  animation: rotate-cef2b120 2s infinite linear;
+}
+
+
+button:hover {
+  //border: 1px solid var(--profile-btn-background) !important;
+  // transform: scale(1.06);
+  box-shadow: 0px 1px 4px 2px var(--hover-button-background) !important;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  border: .125rem solid transparent !important;
+  cursor: pointer;
+}
+
+button div:hover::before {
+  //transform: scale(1);
+}
+
+
+button span,
+button img {
+  position: relative;
+  z-index: 10;
+}
+
+button:hover img {
+  position: relative;
+  z-index: 10;
+  filter: invert(0.1);
+  animation: rotate-cef2b120 2s infinite linear;
+}
+
+@keyframes rotate-cef2b120 {
+  0% {
+    transform: rotate(0);
+  }
+
+  40% {
+    transform: rotate(25deg);
+  }
+  45% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(25deg);
+  }
+  55% {
+    transform: rotate(0);
+  }
+  60% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+
+@keyframes rotate-weGame {
+  0% {
+    transform: rotate(0);
+  }
+  40% {
+    transform: rotate(6deg) scale(1.1);
+  }
+  45% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-6deg) scale(1.1);
+
+  }
+
+  55% {
+    transform: rotate(0);
+  }
+
+  60% {
+    transform: rotate(6deg) scale(1.1);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.asideImgSize {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+
+.textCenter {
+
+  text-align: center !important;
+}
+
+.asideLeftImg {
+  @extend .asideImgSize;
+  border-radius: 0.625rem;
+  border: 1px solid;
+  border-image-source: linear-gradient(148.82deg, var(--left-nav-border-start) 4.38%, var(--left-nav-border-end) 36.72%);
+  box-sizing: border-box;
+
+}
+
+.asideLeftImg:hover {
+  filter: contrast(60%);
+  transition: all 0.4s ease;
+}
+
+.textOverflow {
+  max-width: -webkit-fill-available;
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 超出部分隐藏 */
+  text-overflow: ellipsis; /* 显示省略号 */
+}
+
+//.lazy-image {
+//  background-image: url('placeholder.webp');
+//  background-size: cover;
+//  /* 其他样式 */
+//}
+
+
+.swing {
+  animation: swing .4s 1 linear both;
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.hoverCursor {
+  cursor: pointer;
+}
+
+.pt3 {
+  padding-top: 3px !important;
+}
+
+.pt5 {
+  padding-top: 5px !important;
+}
+
+
+.pri_input {
+  width: 100%;
+  height: 53px;
+  background-color: #111933;
+  border: 1px solid transparent;
+  color: #ffffff;
+  padding: 12px 10px;
+  border-radius: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.pri_input.border_input {
+  height: 54px;
+  background: #09122B;
+  border: 1.4px solid #456C9980;
+}
+
+.pri_input:focus {
+  outline: none;
+  //border-color: #66afe9;
+  //box-shadow: 0 0 5px #66afe9;
+  border: 1px solid #94A1BA
+}
+
+.pri_input:hover {
+  outline: none;
+  border: 1px solid #94A1BA;
+}
+
+.pri_input:disabled {
+  //background-color: #ddd;
+  //color: #999;
+}
+
+.pri_input[type="text"] {
+  background-color: #1C2A46;
+}
+
+.border_input[type="text"] {
+  background-color: #09122B;
+}
+
+.pri_input[type="password"] {
+  //border: 2px solid #ff9800;
+}
+
+/* 去掉number输入框的上下箭头 */
+.pri_input[type="number"]::-webkit-inner-spin-button,
+.pri_input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.pri_input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.pri_input::placeholder {
+  color: #456C9980;
+  opacity: 1;
+  font-size: 18px;
+  font-family: 'FixelText-ExtraBold';
+
+  @media screen and (max-width: 786px) {
+    font-size: 14px;
+  }
+}
+
+.pri-radio input:checked + .radio-checkmark {
+  background-color: #007bff; /* 选择时圆形的背景颜色 */
+}
+
+.pri-radio input:checked + .radio-checkmark::after {
+  content: ''; /* 用于创建内部小圆点 */
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; /* 圆形 */
+  background: white; /* 内部圆点的颜色 */
+  position: relative;
+  top: 5px; /* 位置调整 */
+  left: 5px; /* 位置调整 */
+}
+
+.el-checkbox {
+  height: auto;
+}
+
+
+//字体calss ui 说以后都只用这两种字体
+//
+.Cy_font_ExtraBold {
+  font-family: 'FixelText-ExtraBold';
+}
+
+.Cy_font_SemiBold {
+  font-family: 'FixelText-Bold';
+}
+
+.Cy_font_Bold {
+  font-family: 'FixelText-Bold';
+}
+
+.Cy_font_Medium {
+  font-family: 'FixelText-Bold';
+}
+
+.Cy_font_Regular {
+  font-family: 'FixelText-Bold';
+}
+
+.whiteColor {
+  color: white;
+}
+
+.red {
+  background: #F00 !important;
+}
+
+.redColor {
+  color: #F00 !important;
+}
+
+.green {
+  background: #20CE2E !important;
+}
+
+.greenColor {
+  color: #20CE2E !important;
+}
+
+.yellow {
+  background: #FFB039 !important;
+}
+
+.yellowColor {
+  color: #FFB039 !important;
+}
+
+.gray {
+  background: #202B50 !important;
+}
+
+.el-select__popper.el-popper {
+  padding: 2px 8px 6px 8px !important;
+}
+
+.el-select__popper.el-popper, .el-select__popper.el-popper .el-popper__arrow:before {
+  border: none !important; //钱包充值 下拉选择，取消白边框
+}
+
+.imgFilter {
+  filter: grayscale(100%) sepia(100%) hue-rotate(90deg) saturate(800%);
+}
+
+@mixin text-ellipsis($line-clamp: 1) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line-clamp;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+.ellipsis {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ellipsis-1 {
+  @include text-ellipsis(1);
+}
+
+.ellipsis-2 {
+  @include text-ellipsis(2);
+}
+
+.ellipsis-3 {
+  @include text-ellipsis(3);
+}
+
+.ellipsis-4 {
+  @include text-ellipsis(4);
+}
+
+.column-tag {
+  position: absolute;
+  width: 100px;
+  display: flex;
+  font-size: 12px;
+  color: #FFF;
+  gap: 10px;
+  top: 0;
+  right: 0;
+  border-radius: 0 120px 0 285px;
+  background: linear-gradient(94deg, #4DD858 0%, #20CE2E 100%);
+  box-shadow: 0 2px 1px 0 rgba(255, 255, 255, 0.2) inset, 0 2px 2px 0 rgba(21, 36, 65, 0.50);
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+
+  &.sport {
+    background: linear-gradient(94deg, #26CCFF 0%, #54A7F3 100%);
+    box-shadow: 0 2px 1px 0 rgba(255, 255, 255, 0.20) inset, 0 2px 2px 0 rgba(21, 36, 65, 0.50);
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// 骨架屏样式（relative + overflow 限定 ::before 的光效动画，避免错位到外层）
+.skeletonScreen {
+  background: #111933;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 添加伪元素实现光效 */
+.skeletonScreen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(129, 129, 129, 0.3) 50%,
+      transparent 100%);
+  animation: shimmer 1.5s infinite;
+}
+
+/* ✅ 添加动画定义：从左移到右 */
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+/*
+ * 触摸粗指针设备：禁止双指捏合与双击缩放（touch-action 不含 pinch-zoom）。
+ * 配合 nuxt viewport + plugins/block-viewport-pinch-zoom.client.ts；更具体选择器可覆盖本规则。
+ */
+@media (hover: none) and (pointer: coarse) {
+  *,
+  *::before,
+  *::after {
+    touch-action: pan-x pan-y;
+  }
+}

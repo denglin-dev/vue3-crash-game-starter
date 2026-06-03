@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--09122BBodyBg);
+  //position: relative;
+  //min-height: 100vh;
+  width: 100%;
+}
+
+* {
+  // transition: all ease-in 0.2s;
+  letter-spacing: 0.4px !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  overflow-x: hidden;
+  // forced-color-adjust: none;
+}
+
+img{
+  user-select: none;
+}
+
+.el-notification {
+  background: var(--new-aside-border-color) !important;
+  border: var(--new-aside-border-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+.el-notification__title {
+  color: var(--primary-text-color) !important;
+}
+
+.el-notification__content {
+  color: var(--primary-text-color) !important;
+}
+.el-select-dropdown__item.is-hovering{
+  background: transparent!important;
+}
+
+.el-form-item__error {
+  margin-top: 10px;
+  color: #AF4143 !important;
+  /* 提示文字 */
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 500;
+  line-height: 16px !important;
+}
+
+.mlo {
+  margin-left: calc(var(--leftPcWidth) - var(--leftCloseWidth));
+}
+
+.mlc {
+  margin-left: var(--leftCloseWidth);
+}
+
+.mro {
+  margin-right: var(--rightPcWidth);
+}
+
+.mrc {
+  margin-right: var(--rightCloseWidth);
+}
+
+.ml116 {
+  margin-left: 116px;
+}
+
+.tr04 {
+  //will-change: transform;
+  //transform: translateZ(0); /* 强制启用 GPU 加速 */
+  transition: all 400ms cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.tr {
+  //will-change: transform;
+  //transform: translateZ(0); /* 强制启用 GPU 加速 */
+  //先注释一下 、、影响到自营游戏获取值
+  transition: all 300ms cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.active_icon {
+  filter: grayscale(100%) sepia(100%) hue-rotate(90deg) saturate(800%);
+}
+
+.betBtn {
+  user-select: none;
+}
+
+.userSelectNone {
+  user-select: none;
+}
+
+.checkbox-style {
+  .el-checkbox__inner {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    background: #192240;
+    border: 1px solid #20ce2e;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+
+.checkbox-style {
+  .el-checkbox__inner {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    background: #192240;
+    border: 1px solid #20ce2e;
+
+    @media screen and (max-width: 768px) {
+      width: 14px;
+      height: 14px;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &.is-checked {
+    .el-checkbox__inner {
+      background: #20ce2e !important;
+      border-color: #20ce2e !important;
+    }
+
+    .el-checkbox__inner:after {
+      border-width: 2px;
+      height: 8px;
+      // left: 8px;
+      // top: 7px;
+      left: 6px;
+      top: 1px;
+      width: 4px; 
+      border-color: #ffffff !important;
+
+      // @media screen and (max-width: 768px) {
+      //   top: 7px;
+      //   left: 8px;
+      // }
+    }
+  }
+}
+
+.el-checkbox__inner:hover {
+
+  border-color: #20ce2e !important;
+}
+
+:deep(.el-checkbox__inner) {
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+:deep(.el-checkbox__input.is-checked .el-checkbox__inner) {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+:deep(.el-checkbox__input .el-checkbox__inner) {
+  background-color: #202b50;
+  border-color: #6a7793;
+}
+
+:deep(.el-checkbox__input.is-checked .el-checkbox__inner::after) {
+  border-color: #20ce2e;
+}
+
+.popup-currency-list {
+  .popup-currency-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 10px;
+    cursor: pointer;
+    color: #6a89ad;
+    font-size: 14px;
+    img {
+      // width: 20px;
+      height: 20px;
+    }
+
+    &.active {
+      border-radius: 8px;
+      background: #1b2441;
+
+      .name {
+        color: #fff;
+      }
+
+      .radio {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 6px solid #20ce2e;
+        background: #000000;
+      }
+
+      .amountSpan {
+        color: #20ce2e;
+      }
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .radio {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid #456c99cc;
+        background: #091c34;
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
+//红点提示
+.Red_dot_prompt{
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 500px;
+    background: #FF4D5A;
+    box-shadow: 0 0 8px 0 #FF4D5A;
+    border-radius: 50%;
+    // border: 2px solid white;
+    @media screen and (max-width: 768px) {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+}

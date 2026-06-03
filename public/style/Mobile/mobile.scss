@@ -1,0 +1,729 @@
+$default-gap: 16px; // 默认列和行之间的间距
+// 响应式变量
+$breakpoint-sm: 768px; // 小屏幕 ==> mobile - min-width: 600px
+$breakpoint-lg: 768px; // 大屏幕 ==> mobile - max-width: 768px
+$breakpoint-pc: 1920px; // 大屏幕 ==> mobile - max-width: 768px
+
+// 栅格布局混合宏  arguments: $item-whith(item的宽度), $gap(间距)
+@mixin grid-layout($item-whith, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($item-whith, 1fr)); // 使用 fr 单位
+  gap: $gap; // 直接使用原始 px 值
+}
+
+// 搜索游戏车样式
+
+// 媒体查询根据不同宽度设置栅格布局
+
+
+@media screen and (max-width: $breakpoint-pc) {
+
+  .search_gameConten {
+    padding: 0 !important;
+    margin-top: 15px !important;
+
+    .swiper_box {
+
+      .swBtn_item {
+        .item_btn_box {
+          border-radius: 8px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  // start--cy_mobile.scss_phoneheaderStyle--
+  //@supports (padding: env(safe-area-inset-top)) {
+  //  body {
+  //    //padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  //  }
+  //}
+  // end--cy_mobile.scss_phoneheaderStyle--
+
+  .page-container {
+    .tabs {
+      margin-top: 1.25rem;
+      //height: 420px;
+      background: none;
+
+      .meaasge_components_tab {
+        // height: 28.375rem;
+        border: var(--bottom-input-background);
+        // 修改 el-tabs 组件的样式
+        color: #f60;
+        width: 100%;
+
+        .el-tabs__header {
+          display: flex;
+          color: #ccc;
+          justify-content: space-between; // 头部按钮样式，采用间隔对其
+          // background-color: var(--primary-button-background); // 修改背景颜色
+        }
+
+        .el-tabs__active-bar {
+          display: none; // 隐藏激活状态下的下划线
+        }
+
+        .el-tabs__item.is-active {
+          text-align: center;
+          font-weight: bold; // 修改激活标签的字体粗体
+          color: var(--white-color);
+          padding: 15px;
+        }
+
+        .el-tabs__item {
+          padding: 15px; // 修改标签的内边距
+          color: var(--primary-text-color);
+          cursor: pointer; // 将鼠标悬停光标设置为指针
+          border-radius: 0.625rem;
+
+          &.is-active {
+            background-color: var(
+                            --home-bottom-active-background
+            ); // 当鼠标悬停时，更改背景颜色
+            color: var(--white-color);
+            text-align: center;
+          }
+
+          &:hover {
+            background-color: var(
+                            --home-bottom-active-background
+            ); // 当鼠标悬停时，更改背景颜色
+            padding: 15px; // 修改标签的内边距
+          }
+        }
+      }
+    }
+
+    .swiper-slide {
+      cursor: pointer;
+    }
+
+    .our-games-box p {
+
+      margin: 0 8px;
+    }
+
+    .our-box-top {
+      width: 100%;
+      //height: calc(100% + 26px);
+      height: 100%;
+      border-radius: 16px;
+      position: relative;
+      //max-width: 170px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      .count {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        .userNum {
+          .leftbox {
+            min-width: 57px;
+            height: 24px;
+            padding: 3px 6px 3px 3px;
+            gap: 4px;
+            border-radius: 48px;
+            background: var(--40, #0b051963);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p {
+              display: inline-block;
+            }
+          }
+
+          .rightbox {
+            width: 32px;
+            height: 32px;
+            gap: 4px;
+            border-radius: 48px;
+            display: flex;
+            align-items: flex-end;
+          }
+
+          .leftbox p {
+            //padding-top: 3px;
+            margin: 0;
+            font-size: 15px;
+
+          }
+
+          .leftbox img {
+            width: 17.92px;
+            height: 17.92px;
+          }
+
+          align-items: flex-end;
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .mines {
+          z-index: 2;
+          font-size: 24px;
+          font-weight: 800;
+          line-height: 32px;
+          letter-spacing: -0.03em;
+          width: 100%;
+          padding-left: 6px;
+        }
+
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 9px 6px 11px 9px;
+      }
+
+      .gameImg {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+
+      }
+
+      //@media screen and (max-width: $breakpoint-lg) {
+      //  width: 105px;
+      //  height: 130px;
+      //}
+    }
+
+
+    .Providers-box {
+      width: 100%;
+      height: 40px !important;
+      background: #111933;
+      border-radius: 12px;
+
+      //@media screen and (max-width: $breakpoint-lg) {
+      //  width: 105px;
+      //  height: 40px;
+      //}
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+
+        &:hover {
+          filter: brightness(1.3);
+        }
+      }
+    }
+
+    .our-games-box {
+      padding: 1px;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .arrow-left {
+        width: 31px;
+        height: 31px;
+        //padding: 9px 8px 8px 9px;
+        //padding: 9px 8px 8px 9px;
+        gap: 8px;
+        border-radius: 8px;
+        border: 1px solid #1c2a46;
+        background: #111933;
+        font-weight: 600;
+        color: #456c99;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+
+      .selectAll {
+        width: 69px;
+        height: 33px;
+
+        border-radius: 8px;
+        background: #1c2a46;
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        //padding: 6px;
+        cursor: pointer;
+      }
+
+      border-radius: 12px;
+      overflow: hidden;
+      justify-content: left;
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+
+    }
+
+    .our-box {
+      .gameImg {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+      }
+
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+    }
+
+    .our-box img {
+      border-radius: 12px;
+    }
+
+    .search-box {
+      .search-box-icon {
+        width: 15px;
+        height: 15px;
+      }
+
+      .sh-right-box {
+        width: 141px;
+        height: 45px;
+        padding: 12px;
+        gap: 8px;
+
+        border-radius: 12px;
+        border: solid 1px #1c2a46;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .sh-right-box p {
+        font-size: 15px;
+        color: #97b9e1;
+        font-weight: 600;
+        text-align: left;
+      }
+
+      .ipt {
+        background: #111933;
+        border-radius: 0.75rem;
+        margin-right: 0.5rem;
+        color: #6b728957;
+        width: 100% !important;
+        height: 40px !important;
+
+        //@media screen and (max-width: $breakpoint-lg) {
+        //  height: 40px;
+        //}
+      }
+
+      justify-content: space-between;
+    }
+
+    .mobileSearch {
+      display: none;
+    }
+
+    .allgame-box {
+      .active {
+        background: #cc76ff33;
+        color: #fff !important;
+      }
+
+      .allgame-title {
+        width: auto;
+        height: 37px;
+        padding: 8px;
+        gap: 8px;
+        cursor: pointer;
+        color: #97b9e1;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 8px;
+      }
+
+      .allgame-title img {
+        width: 16px;
+        height: 16px;
+      }
+
+      width: 1027px;
+      height: 37px;
+      gap: 8px;
+      display: flex;
+    }
+
+    .container-box {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 calc((100% - 1100px) / 2);
+      //@media screen and (max-width: $breakpoint-lg) {
+      //  width: 100%;
+      //  padding: 0 15px;
+      //}
+
+      .mySwiper {
+        width: 100%;
+      }
+
+      .frambox {
+        .cntainer-box {
+          .left-box {
+            width: 48px;
+            height: 48px;
+          }
+
+
+          .right-title {
+            .hogland {
+
+              max-width: 76px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            .money-box {
+              color: #fff;
+              font-size: 14px;
+              font-weight: 800;
+              justify-content: flex-start;
+              margin-top: 5px;
+            }
+
+            .money-box img {
+              width: 16px;
+              height: 16px;
+            }
+
+            color: #456c99;
+            font-size: 13px;
+            font-weight: 600;
+          }
+
+          .left-box img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+          }
+
+          width: 100%;
+          height: 60px;
+          padding: 6px;
+          gap: 11px;
+          border-radius: 12px;
+          background: #111933;
+          justify-content: flex-start;
+
+        }
+
+        width: 100%;
+        //height: 60px;
+        gap: 8px;
+        overflow-x: auto;
+        cursor: pointer;
+        display: flex;
+
+      }
+    }
+
+
+    .swBtn_item {
+      display: flex;
+      //justify-content: center;
+      align-items: center;
+      //padding-right: 10px;
+      font-size: 15px;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+
+      span {
+          
+        font-size: 15px;
+        margin-left: 5px;
+      }
+
+      .item_btn {
+          
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        text-align: left;
+        color: rgba(151, 185, 225, 1);
+        padding: 6px 10px;
+
+        &:hover {
+          // background: rgba(151, 185, 225, 0.2);
+          color: white;
+          border-radius: 0.5rem;
+
+          img {
+            filter: brightness(3.5);
+          }
+        }
+      }
+
+      div {
+        display: flex;
+        //justify-content: center;
+        align-items: center;
+        //padding-right: 10px;
+        font-size: 15px;
+
+      }
+
+      .item_btn_box {
+        box-sizing: border-box;
+        border-radius: 0.5rem;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 6px 10px;
+        text-align: left;
+      }
+
+      .active_btn {
+        background: rgba(204, 118, 255, 0.2);
+        color: white;
+
+        img {
+          filter: hue-rotate(75deg);
+        }
+      }
+    }
+  }
+  .close {
+    margin: 0 !important;
+  }
+  .main {
+    width: 100% !important;
+    padding: 0 15px !important;
+
+    .asideLeft {
+      display: none !important;
+    }
+  }
+  .asideRight {
+    display: none !important;
+  }
+  .header-right {
+    .message, .chat, .search {
+      display: none !important;
+    }
+  }
+  .search_gameConten {
+    padding: 0 !important;
+    margin-top: 15px !important;
+    .game_car_item_search {
+      // aspect-ratio: 1 / 1;
+    }
+    .swiper_box {
+      padding: 0 !important;
+      .swBtn_item {
+        .item_btn_box {
+          border-radius: 8px !important;
+        }
+      }
+    }
+  }
+  .search-game {
+    .search-game-content {
+      padding: 0 !important;
+      display: grid !important;
+      //grid-template-columns: repeat(10, 1fr);
+      grid-template-areas: "before_one before_one before_one before_one before_one before_one before_one before_one before_one before_one before_one before_one before_one before_four "
+                           "before_three before_three before_three before_three before_three before_three before_three  before_two before_two before_two before_two before_two before_two before_two";
+      gap: 12px;
+      .search-game-before {
+        grid-area: before_one;
+        padding: 0 !important;
+        order: -1;
+      } .search-game-before1 {
+          grid-area: before_two;
+          margin: 0 !important;
+        }
+
+      .search-game-before2 {
+        grid-area: before_three;
+        margin: 0 !important;
+      }
+
+      .search-input-width {
+        width: 100% !important;
+      }
+
+      .dropdown-select {
+        width: 100% !important;
+        height: 42px !important;
+        padding: 10px !important;
+
+        .dropdown-trigger {
+          div {
+
+            img {
+              width: 20px !important;
+              height: 20px !important;
+            }
+
+            span {
+              font-size: 10px !important;
+            }
+          }
+
+          .dropdown-towDome {
+            span {
+              width: 40px !important;
+            }
+          }
+        }
+      }
+
+      .close-btn_img {
+        margin: 0 !important;
+        grid-area: before_four;
+        justify-self: end;
+      }
+
+      .dropdown-content {
+        div {
+          font-size: 14px !important;
+        }
+      }
+    }
+
+    .swiper_box {
+      width: auto !important;
+    }
+  }
+
+  //  start----cy_mobile.scss_headerStyle----
+  .box {
+    .header {
+      height: var(--mobile-header-height) !important;
+    }
+
+    .header-box {
+      padding: 0 8px !important;
+
+      .header-left {
+        .header-logo {
+          margin: 0 !important;
+          width: auto !important;
+          background: none !important;
+
+          .menu-controls {
+            display: none !important;
+          }
+        }
+      }
+
+      .header-center {
+        .header-center-right {
+          display: none !important;
+        }
+
+        .header-center-cy_heder {
+          display: block !important;
+        }
+      }
+
+      .header-right {
+        .personalInfo {
+          width: auto !important;
+          border: none !important;
+          margin: 0 !important;
+
+          .personalInfoLeftArrowBox {
+            .personalInfo-left {
+              margin: 0 !important;
+              width: auto !important;
+
+              .avatar {
+                margin: 0 !important;
+              }
+
+              .userName {
+                display: none !important;
+              }
+            }
+
+            .personalInfo-arrow {
+              display: none !important;
+            }
+          }
+        }
+      }
+
+      .logo-box {
+        width: auto !important;
+
+        .logo-img {
+          width: auto !important;
+
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  //  end----cy_mobile.scss_headerStyle----
+
+  .close-btn_img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  //手机端的顶部钱包
+  #herder_center_whith_wallet.mobileHeader-wallet {
+    border-radius: 18px;
+    background: var(--mobile-bg-color);
+    border: 1px solid var(--new-aside-border-color);
+    height: 40px;
+
+    .header-center-left{
+      margin-right: 10px;
+
+      .wallet-container {
+        background: transparent;
+        padding-right: 0;
+        .wallet-info{
+          .selectCoin-icon{
+            margin-right: 10px;
+          }
+          .arrow{
+            width: 14px;
+            height: 14px;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+    .header-center-cy_heder{
+      width: 24px;
+      height: 24px;
+      line-height: 26px;
+      border-radius: 50%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+    .number-item > span > i{
+      top: 10px;
+    }
+    .mark-item > span{
+      top: 7px;
+    }
+  }
+
+}
+

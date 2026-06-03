@@ -1,0 +1,291 @@
+
+.cySprite {
+  background-image: url('/public/img/newMain/sprites.svg'); /* 雪碧图路径 */
+  background-repeat: no-repeat;
+  display: inline-block;
+  cursor: pointer; 
+  //background-size: 100% 100%;
+}
+
+.active .cySprite {
+  filter: grayscale(100%) sepia(100%) hue-rotate(90deg) saturate(800%);
+}
+
+.cySprite-x {
+  background-position-x: 0;
+  background-position-y: 0;
+  width: 80px;
+  height: 44px;
+}
+
+.cySprite-y {
+  background-position-x: -85px;
+  background-position-y: 0;
+  width: 80px;
+  height: 44px;
+}
+
+.cySprite-t {
+  background-position-x: -170px;
+  background-position-y: 0;
+  width: 80px;
+  height: 44px;
+}
+
+.cySprite-logo-pc {
+  background-position-x: -85px;
+  background-position-y: -151px;
+  width: 129px;
+  height: 38px;
+}
+
+.cySprite-down {
+  background-position-x: -254px;
+  background-position-y: -14px;
+  width: 16px;
+  height: 16px;
+}
+
+.cySprite-coin1 {
+  background-position-x: -276px;
+  background-position-y: -15px;
+  width: 14px;
+  height: 14px;
+}
+
+.cySprite-coin2 {
+  background-position-x: -295px;
+  background-position-y: -15px;
+  width: 14px;
+  height: 14px;
+}
+
+.cySprite-cel1 {
+  background-position-x: 0;
+  background-position-y: -49px;
+  width: 44px;
+  height: 44px;
+}
+
+.cySprite-cel2 {
+  background-position-x: -49px;
+  background-position-y: -49px;
+  width: 44px;
+  height: 44px;
+}
+
+.cySprite-chat {
+  background-position-x: -98px;
+  background-position-y: -49px;
+  width: 42px;
+  height: 42px;
+}
+
+.cySprite-search-bg {
+  background-position-x: -145px;
+  background-position-y: -49px;
+  width: 42px;
+  height: 42px;
+}
+
+.cySprite-close {
+  background-position-x: -192px;
+  background-position-y: -49px;
+  width: 42px;
+  height: 42px;
+}
+
+.cySprite-close {
+  background-position-x: 0;
+  background-position-y: -105px;
+  width: 32px;
+  height: 32px;
+}
+
+.cySprite-send {
+  background-position-x: -37px;
+  background-position-y: -105px;
+  width: 32px;
+  height: 32px;
+}
+
+.cySprite-rule {
+  background-position-x: -74px;
+  background-position-y: -113px;
+  width: 16px;
+  height: 16px;
+}
+
+.cySprite-list {
+  background-position-x: -95px;
+  background-position-y: -113px;
+  width: 16px;
+  height: 16px;
+}
+
+.cySprite-18 {
+  background-position-x: -119px;
+  background-position-y: -104px;
+  width: 34px;
+  height: 34px;
+}
+
+.cySprite-footer {
+  background-position-x: -155px;
+  background-position-y: -104px;
+  width: 34px;
+  height: 34px;
+}
+
+.cySprite-map {
+  background-position-x: -194px;
+  background-position-y: -112px;
+  width: 24px;
+  height: 24px;
+}
+
+.cySprite-arrow-max {
+  background-position-x: -223px;
+  background-position-y: -112px;
+  width: 20px;
+  height: 20px;
+}
+
+.cySprite-page-left {
+  background-position-x: 0;
+  background-position-y: -158px;
+  width: 24px;
+  height: 24px;
+}
+
+.cySprite-page-right-active {
+  background-position-x: -29px;
+  background-position-y: -158px;
+  width: 24px;
+  height: 24px;
+}
+
+.cySprite-arrow-close {
+  background-position-x: -58px;
+  background-position-y: -160px;
+  width: 22px;
+  height: 22px;
+}
+
+.cySprite-chat-top {
+  background-position-x: 0;
+  background-position-y: -195px;
+  width: 38px;
+  height: 38px;
+}
+
+.cySprite-arrow-top {
+  background-position-x: -43px;
+  background-position-y: -201px;
+  width: 24px;
+  height: 24px;
+}
+
+.cySprite-arrow-down {
+  background-position-x: -72px;
+  background-position-y: -201px;
+  width: 24px;
+  height: 24px;
+}
+
+.cySprite-arrow-search {
+  background-position-x: -101px;
+  background-position-y: -205px;
+  width: 20px;
+  height: 20px;
+}
+
+.cySprite-logo-mobile {
+  background-position-x: -90px;
+  background-position-y: -154px;
+  width: 32px;
+  height: 32px;
+}
+
+.cySprite-wuxing {
+  background-position-x: -2px;
+  background-position-y: -239px;
+  width: 24px;
+  height: 24px;
+}
+
+.cySprite-wallet {
+  background-position-x: -31px;
+  background-position-y: -239px;
+  width: 24px;
+  height: 24px;
+}
+
+.cySprite-user {
+  background-position-x: -60px;
+  background-position-y: -239px;
+  width: 24px;
+  height: 24px;
+}
+
+.cySprite-gift {
+  background-position-x: -89px;
+  background-position-y: -239px;
+  width: 24px;
+  height: 24px;
+}
+
+.cySprite-fair {
+  background-position-x: -115px;
+  background-position-y: -239px;
+  width: 24px;
+  height: 24px;
+}
+
+//.cySprite-gift {
+//  background-position-x: -147px;
+//  background-position-y: -239px;
+//  width: 24px;
+//  height: 24px;
+//}
+//.cySprite-fair {
+//  background-position-x: -176px;
+//  background-position-y: -239px;
+//  width: 24px;
+//  height: 24px;
+//}
+.cySprite-service {
+  background-position-x: -147px;
+  background-position-y: -239px;
+  width: 24px;
+  height: 24px;
+}
+// 新版图标样式
+.wuxing{
+  width: 16px;
+  height: 16px;
+}
+.vipIcon{
+  width: 16.8px;
+  height: 14.6px;
+}
+.referralsIcon{
+  height: 16.5px;
+  width: 16.5px;
+}
+.verifyFairness{
+  height: 22px;
+  width: 22px;
+}
+.vector{
+  width: 16px;
+  height: 18px;
+}
+.Language{
+  height: 18px;
+  width: 18px;
+}
+.affiliateIcon{
+  width: 20px;
+  height: 18px;
+}
